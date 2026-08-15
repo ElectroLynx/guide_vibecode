@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Est-ce vibecodé ? — Guide de terrain</title>
+    <meta
+      name="description"
+      content="Petit guide pour reconnaître le code vibecodé : huit signes, des exemples concrets, et une note sur 100."
+    />
+    <meta name="theme-color" content="#11110f" />
+    <meta property="og:title" content="Est-ce vibecodé ?" />
+    <meta
+      property="og:description"
+      content="Un guide simple pour détecter le code écrit à l’instinct — souvent avec une IA — et lui coller une note."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;700;800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#contenu">Aller au contenu</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="#top">
+          <span class="mark">V</span>
+          Est-ce vibecodé ?
+        </a>
+        <nav class="nav" aria-label="Sections">
+          <a href="#methode">Méthode</a>
+          <a href="#signes">8 signes</a>
+          <a href="#detecteur">Détecteur</a>
+          <a href="#pages">GitHub Pages</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenu">
+      <section class="hero" id="top">
+        <div class="wrap">
+          <p class="kicker">Guide de terrain · v1.0</p>
+          <h1>Est-ce vibecodé&nbsp;?</h1>
+          <p class="lede">
+            Un petit guide pour lire un fichier et décider, sans cérémonie, s’il
+            a été écrit — ou surtout généré — à l’instinct. Huit signes, des
+            exemples concrets, une note sur 100.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#detecteur">Lancer le diagnostic</a>
+            <a class="btn btn--ghost" href="#signes">Voir les signes</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><b>8</b><span>catégories observables</span></div>
+            <div class="stat"><b>0–100</b><span>échelle de vibe</span></div>
+            <div class="stat"><b>2 min</b><span>pour un premier verdict</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="methode">
+        <div class="wrap">
+          <h2>À quoi ça sert</h2>
+          <p>
+            Vibecoder, c’est coller la sortie d’un assistant, tweaker jusqu’à ce
+            que « ça marche », et passer à la suite. L’outil n’est pas le
+            problème. Le problème, c’est le code que plus personne ne peut
+            expliquer. Ce guide ne chasse pas l’IA : il chasse les traces
+            laissées quand on n’a pas relu.
+          </p>
+          <div class="steps">
+            <article class="step">
+              <span>01</span>
+              <strong>Ouvre le fichier</strong>
+              Une fonction, un composant, un script. Pas tout le repo d’un coup.
+            </article>
+            <article class="step">
+              <span>02</span>
+              <strong>Cherche les 8 signes</strong>
+              Chaque catégorie a un contre-exemple. Compare, ne compte pas les
+              lignes.
+            </article>
+            <article class="step">
+              <span>03</span>
+              <strong>Coche le détecteur</strong>
+              Absent, léger, présent, criant. Le score se calcule tout seul.
+            </article>
+            <article class="step">
+              <span>04</span>
+              <strong>Lis le verdict</strong>
+              La note est un jeu. La liste des signes, elle, est actionnable.
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="signes">
+        <div class="wrap">
+          <h2>Les 8 signes</h2>
+          <p>
+            Un seul signe ne prouve rien : un humain fatigué commente trop, une
+            IA bien briefée peut être sobre. C’est le cocktail qui parle.
+          </p>
+
+          <article class="sign" id="signe-1">
+            <div class="sign-index">01</div>
+            <div>
+              <h3>Le tutoriel dans le code</h3>
+              <p class="why">
+                Le fichier raconte ce qu’il fait comme s’il s’adressait à un
+                débutant. Les commentaires paraphrasent chaque ligne au lieu
+                d’expliquer une intention, un piège, ou un choix.
+              </p>
+              <div class="compare">
+                <div class="panel panel--bad">
+                  <header>Vibecodé</header>
+                  <pre><code><span class="c">// This function adds two numbers together</span>
+<span class="c">// It takes a and b, then returns the sum</span>
+<span class="kw">function</span> add(a, b) {
+  <span class="c">// Store the result of adding a and b</span>
+  <span class="kw">const</span> result = a + b;
+  <span class="c">// Return the result to the caller</span>
+  <span class="kw">return</span> result;
+}</code></pre>
+                </div>
+                <div class="panel panel--ok">
+                  <header>Plutôt ça</header>
+                  <pre><code><span class="kw">function</span> add(a, b) {
+  <span class="kw">return</span> a + b;
+}
+
+<span class="c">// Arrondi banquier : les totaux caisse</span>
+<span class="c">// doivent matcher le journal N-1.</span>
+<span class="kw">function</span> roundMoney(amount) {
+  <span class="kw">return</span> Math.round(amount * 20) / 20;
+}</code></pre>
+                </div>
+              </div>
+              <p class="tip">
+                Règle : un commentaire dit <em>pourquoi</em>, pas <em>ce que fait
+                déjà le code</em>.
+              </p>
+            </div>
+          </article>
+
+          <article class="sign" id="signe-2">
+            <div class="sign-index">02</div>
+            <div>
+              <h3>Les noms jetables</h3>
+              <p class="why">
+                Vocabulaire IKEA : <span class="code-inline">data</span>,
+                <span class="code-inline">item</span>,
+                <span class="code-inline">result</span>,
+                <span class="code-inline">obj</span>,
+                <span class="code-inline">processData</span>. Ça compile. Ça ne
+                décrit aucun métier.
+              </p>
+              <div class="compare">
+                <div class="panel panel--bad">
+                  <header>Vibecodé</header>
+                  <pre><code><span class="kw">function</span> processData(data) {
+  <span class="kw">const</span> result = [];
+  <span class="kw">for</span> (<span class="kw">const</span> item <span class="kw">of</span> data) {
+    <span class="kw">const</span> obj = { ...item, value: item.value };
+    result.push(obj);
+  }
+  <span class="kw">return</span> result;
+}</code></pre>
+                </div>
+                <div class="panel panel--ok">
+                  <header>Plutôt ça</header>
+                  <pre><code><span class="kw">function</span> invoicesWithTax(invoices) {
+  <span class="kw">return</span> invoices.map((invoice) => ({
+    ...invoice,
+    total: invoice.amount * 1.2,
+  }));
+}</code></pre>
+                </div>
+              </div>
+              <p class="tip">
+                Si tu ne peux pas remplacer <span class="code-inline">data</span>
+                par un mot du produit (facture, trajet, vote), le nom n’a pas
+                encore été choisi.
+              </p>
+            </div>
+          </article>
+
+          <article class="sign" id="signe-3">
+            <div class="sign-index">03</div>
+            <div>
+              <h3>L’erreur de décoration</h3>
+              <p class="why">
+                Un <span class="code-inline">try/catch</span> partout, un
+                <span class="code-inline">console.log</span> dans le catch, un
+                commentaire <span class="code-inline">// handle error</span>, et
+                on continue comme si de rien n’était.
+              </p>
+              <div class="compare">
+                <div class="panel panel--bad">
+                  <header>Vibecodé</header>
+                  <pre><code><span class="kw">try</span> {
+  <span class="kw">const</span> data = JSON.parse(raw);
+  <span class="kw">return</span> data;
+} <span class="kw">catch</span> (error) {
+  console.log("An error occurred:", error);
+  <span class="c">// Handle error gracefully</span>
+}</code></pre>
+                </div>
+                <div class="panel panel--ok">
+                  <header>Plutôt ça</header>
+                  <pre><code><span class="kw">function</span> parseConfig(raw) {
+  <span class="kw">try</span> {
+    <span class="kw">return</span> JSON.parse(raw);
+  } <span class="kw">catch</span> {
+    <span class="kw">throw new</span> Error("Config JSON invalide");
+  }
+}</code></pre>
+                </div>
+              </div>
+              <p class="tip">
+                Attraper une erreur, c’est décider : retry, message utilisateur,
+                ou arrêt. Logger et avaler, ce n’est pas décider.
+              </p>
+            </div>
+          </article>
+
+          <article class="sign" id="signe-4">
+            <div class="sign-index">04</div>
+            <div>
+              <h3>L’usine à gaz</h3>
+              <p class="why">
+                Factory, helper, wrapper, context, et un
+                <span class="code-inline">useMemo</span> pour un booléen. Le
+                problème tenait en six lignes. La solution en tient soixante.
+              </p>
+              <div class="compare">
+                <div class="panel panel--bad">
+                  <header>Vibecodé</header>
+                  <pre><code><span class="kw">const</span> createToggleFactory = () => {
+  <span class="kw">return</span> {
+    createInitialState: () => ({ isEnabled: <span class="kw">false</span> }),
+    toggle: (state) => ({ isEnabled: !state.isEnabled }),
+  };
+};
+<span class="kw">const</span> factory = createToggleFactory();
+<span class="kw">const</span> state = factory.createInitialState();</code></pre>
+                </div>
+                <div class="panel panel--ok">
+                  <header>Plutôt ça</header>
+                  <pre><code><span class="kw">const</span> [enabled, setEnabled] = useState(<span class="kw">false</span>);
+
+&lt;button onClick={() => setEnabled((v) => !v)}&gt;
+  {enabled ? "On" : "Off"}
+&lt;/button&gt;</code></pre>
+                </div>
+              </div>
+              <p class="tip">
+                Si tu dois dessiner un schéma pour expliquer un interrupteur, tu
+                as généré de l’architecture, pas une solution.
+              </p>
+            </div>
+          </article>
+
+          <article class="sign" id="signe-5">
+            <div class="sign-index">05</div>
+            <div>
+              <h3>La doc qui répète le code</h3>
+              <p class="why">
+                Un JSDoc encyclopédique sur une fonction triviale, des
+                <span class="code-inline">@param</span> qui recopyent les noms,
+                zéro info sur les cas limites.
+              </p>
+              <div class="compare">
+                <div class="panel panel--bad">
+                  <header>Vibecodé</header>
+                  <pre><code><span class="c">/**
+ * Adds two numbers together.
+ * @param {number} a - The first number to add.
+ * @param {number} b - The second number to add.
+ * @returns {number} The sum of a and b.
+ */</span>
+<span class="kw">function</span> add(a, b) {
+  <span class="kw">return</span> a + b;
+}</code></pre>
+                </div>
+                <div class="panel panel--ok">
+                  <header>Plutôt ça</header>
+                  <pre><code><span class="c">/** Prix TTC à partir d’un HT déjà en centimes. */</span>
+<span class="kw">function</span> ttcFromCents(htCents, vatRate = 0.2) {
+  <span class="kw">return</span> Math.round(htCents * (1 + vatRate));
+}</code></pre>
+                </div>
+              </div>
+              <p class="tip">
+                Documente le contrat bizarre (unités, arrondis, auth). Laisse
+                <span class="code-inline">add</span> tranquille.
+              </p>
+            </div>
+          </article>
+
+          <article class="sign" id="signe-6">
+            <div class="sign-index">06</div>
+            <div>
+              <h3>Les traces de l’assistant</h3>
+              <p class="why">
+                Phrases de chat restées dans le fichier : « Sure! », « Here’s a
+                comprehensive solution », TODO: implement, emojis 🚀✅, URL
+                <span class="code-inline">api.example.com</span>.
+              </p>
+              <div class="compare">
+                <div class="panel panel--bad">
+                  <header>Vibecodé</header>
+                  <pre><code><span class="c">// Sure! Here's a robust user service 🚀</span>
+<span class="c">// Let's fetch the users from the API</span>
+<span class="kw">async function</span> fetchUsers() {
+  <span class="c">// TODO: add your API endpoint here</span>
+  <span class="kw">const</span> res = <span class="kw">await</span> fetch("https://api.example.com/users");
+  <span class="kw">const</span> data = <span class="kw">await</span> res.json();
+  <span class="kw">return</span> data; <span class="c">// return the data</span>
+}</code></pre>
+                </div>
+                <div class="panel panel--ok">
+                  <header>Plutôt ça</header>
+                  <pre><code><span class="kw">async function</span> fetchUsers() {
+  <span class="kw">const</span> res = <span class="kw">await</span> fetch("/api/users");
+  <span class="kw">if</span> (!res.ok) {
+    <span class="kw">throw new</span> Error(`Users HTTP ${res.status}`);
+  }
+  <span class="kw">return</span> res.json();
+}</code></pre>
+                </div>
+              </div>
+              <p class="tip">
+                Si une phrase pourrait être collée dans un chat, elle n’a rien à
+                faire dans le dépôt.
+              </p>
+            </div>
+          </article>
+
+          <article class="sign" id="signe-7">
+            <div class="sign-index">07</div>
+            <div>
+              <h3>Le patchwork de styles</h3>
+              <p class="why">
+                camelCase et snake_case dans le même objet, quotes mixtes, un
+                <span class="code-inline">fetch</span> ici, un
+                <span class="code-inline">axios</span> là, des imports d’un
+                package qui n’existe pas.
+              </p>
+              <div class="compare">
+                <div class="panel panel--bad">
+                  <header>Vibecodé</header>
+                  <pre><code><span class="kw">const</span> user_name = user.name;
+<span class="kw">const</span> userId = user["id"];
+<span class="kw">await</span> axios.get("/v1/profile");
+<span class="kw">await</span> fetch("/api/profile");
+<span class="kw">import</span> { prettyPrint } <span class="kw">from</span> "lodash-helpers";</code></pre>
+                </div>
+                <div class="panel panel--ok">
+                  <header>Plutôt ça</header>
+                  <pre><code><span class="kw">const</span> userName = user.name;
+<span class="kw">const</span> userId = user.id;
+<span class="kw">const</span> profile = <span class="kw">await</span> api.get("/v1/profile");</code></pre>
+                </div>
+              </div>
+              <p class="tip">
+                Un fichier, une convention. Les APIs inventées et les imports
+                morts sont le bonus « halluciné ».
+              </p>
+            </div>
+          </article>
+
+          <article class="sign" id="signe-8">
+            <div class="sign-index">08</div>
+            <div>
+              <h3>Les restes de chantier</h3>
+              <p class="why">
+                <span class="code-inline">console.log("here")</span>, variables
+                inutilisées, README impeccable qui promet un dashboard alors que
+                le bouton ne fait rien.
+              </p>
+              <div class="compare">
+                <div class="panel panel--bad">
+                  <header>Vibecodé</header>
+                  <pre><code><span class="kw">export function</span> saveDraft(payload) {
+  console.log("payload", payload);
+  console.log("saving...");
+  <span class="c">// TODO: implement persistence</span>
+  <span class="kw">return</span> { success: <span class="kw">true</span>, data: payload };
+}</code></pre>
+                </div>
+                <div class="panel panel--ok">
+                  <header>Plutôt ça</header>
+                  <pre><code><span class="kw">export async function</span> saveDraft(payload) {
+  <span class="kw">const</span> row = <span class="kw">await</span> db.drafts.upsert(payload);
+  <span class="kw">return</span> row;
+}</code></pre>
+                </div>
+              </div>
+              <p class="tip">
+                Le README n’est pas un alibi. S’il décrit une app qui n’existe
+                pas encore, c’est de la vibe, pas de la doc.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="echelle">
+        <div class="wrap">
+          <h2>L’échelle</h2>
+          <p>
+            Le détecteur additionne 8 signes notés de 0 à 3, puis ramène le
+            total sur 100. C’est un jeu — utile pour comparer deux fichiers, pas
+            pour un procès.
+          </p>
+          <div class="scale">
+            <div class="scale-row">
+              <b>0–17</b>
+              <span>Artisan — quelqu’un a choisi les noms et coupé le gras.</span>
+              <span class="pill">Artisan</span>
+            </div>
+            <div class="scale-row">
+              <b>18–37</b>
+              <span>Vibe light — un assistant a aidé, une relecture a suivi.</span>
+              <span class="pill">Vibe light</span>
+            </div>
+            <div class="scale-row">
+              <b>38–61</b>
+              <span>Vibecodé — les tics s’empilent, le métier s’efface.</span>
+              <span class="pill">Vibecodé</span>
+            </div>
+            <div class="scale-row">
+              <b>62–81</b>
+              <span>Vibe max — trop de code, trop peu de décisions.</span>
+              <span class="pill">Vibe max</span>
+            </div>
+            <div class="scale-row">
+              <b>82–100</b>
+              <span>Spécimen — à classer au musée, pas en production.</span>
+              <span class="pill">Spécimen</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section detector" id="detecteur">
+        <div class="wrap">
+          <h2>Détecteur</h2>
+          <p>
+            Coche ce que tu vois dans le fichier. Le vibe-o-mètre fait le reste.
+          </p>
+          <div class="detector-grid">
+            <div class="card" id="checks"></div>
+            <aside class="card meter-card">
+              <div class="meter-ring" style="--score: 0">
+                <div class="meter-inner">
+                  <div>
+                    <strong id="score-value">0</strong>
+                    <span>/ 100</span>
+                  </div>
+                </div>
+              </div>
+              <div class="verdict">
+                <div class="stamp" id="stamp">Artisan</div>
+                <h3 id="verdict-title">Code avec une âme</h3>
+                <p id="verdict-text">
+                  Coche les signes pour obtenir un verdict.
+                </p>
+              </div>
+              <div class="actions">
+                <button class="btn" id="copy" type="button">Copier le verdict</button>
+                <button class="btn btn--ghost" id="reset" type="button">Remise à zéro</button>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="pages">
+        <div class="wrap">
+          <h2>Publier sur GitHub Pages</h2>
+          <p>
+            Ce dépôt est un site statique : HTML, CSS, JS. Aucun build. Une fois
+            fusionné dans <span class="code-inline">main</span>, active Pages
+            ainsi :
+          </p>
+          <div class="pages">
+            <div class="card">
+              <ol>
+                <li>
+                  Ouvre le dépôt → <strong>Settings</strong> →
+                  <strong>Pages</strong>.
+                </li>
+                <li>
+                  Sous <strong>Build and deployment</strong>, choisis
+                  <strong>Source : Deploy from a branch</strong>.
+                </li>
+                <li>
+                  Branch <span class="code-inline">main</span>, dossier
+                  <span class="code-inline">/ (root)</span>, puis
+                  <strong>Save</strong>.
+                </li>
+                <li>
+                  Le site sera servi sur
+                  <span class="code-inline">https://&lt;user&gt;.github.io/guide_vibecode/</span>
+                  (quelques minutes).
+                </li>
+              </ol>
+            </div>
+            <div class="card">
+              <p>
+                Variante Actions : dans Pages, source
+                <strong>GitHub Actions</strong>. Le workflow
+                <span class="code-inline">.github/workflows/pages.yml</span>
+                publie la racine du dépôt à chaque push sur
+                <span class="code-inline">main</span>.
+              </p>
+              <p>
+                Fichier <span class="code-inline">.nojekyll</span> : GitHub ne
+                passe pas le site dans Jekyll, donc les chemins et assets restent
+                tels quels.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>Guide vibecode · lecture de traces, pas de morale.</span>
+        <span>MIT · ElectroLynx</span>
+      </div>
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
