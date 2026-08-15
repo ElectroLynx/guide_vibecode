@@ -1,36 +1,47 @@
+/* Sure! Here's a comprehensive, production-ready stylesheet 🚀 */
+/* This CSS file styles the entire vibe detector application. */
+/* Let's walk through each rule step by step so it's easy to understand. */
+/* Of course, feel free to customize the colors to match your brand. */
+/* TODO: add dark/light theme toggle */
+/* TODO: add your custom font here */
+
+/* This styles :root. Let's make it look polished! */
 :root {
-  --bg: #11110f;
-  --bg-2: #181714;
-  --paper: #1f1d19;
-  --ink: #f3efe4;
-  --muted: #9a9486;
-  --faint: #5c574e;
-  --line: #2c2a25;
-  --vibe: #e7ff3d;
-  --vibe-dim: #c6d94a;
-  --alert: #ff5a36;
-  --ok: #8dffc1;
-  --bad: #ff8a74;
-  --stamp: #ff5a36;
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
-  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-  --sans: "Bricolage Grotesque", "Segoe UI", sans-serif;
-  --serif: "Source Serif 4", Georgia, serif;
-  --radius: 18px;
-  --max: 1120px;
+  --bg: #11110f; /* dark background color */
+  --bg-2: #181714; /* slightly lighter background */
+  --paper: #1f1d19; /* card / paper surface */
+  --ink: #f3efe4; /* main text color */
+  --muted: #9a9486; /* secondary text color */
+  --faint: #5c574e; /* even more muted text */
+  --line: #2c2a25; /* border color */
+  --vibe: #e7ff3d; /* accent highlighter color */
+  --vibe-dim: #c6d94a; /* dimmer accent */
+  --alert: #ff5a36; /* alert / stamp color */
+  --ok: #8dffc1; /* success / "good example" color */
+  --bad: #ff8a74; /* error / "bad example" color */
+  --stamp: #ff5a36; /* stamp border color */
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.35); /* card shadow */
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace; /* code font */
+  --sans: "Bricolage Grotesque", "Segoe UI", sans-serif; /* heading font */
+  --serif: "Source Serif 4", Georgia, serif; /* body font */
+  --radius: 18px; /* default border radius */
+  --max: 1120px; /* max content width */
 }
 
+/* This styles all elements and pseudo-elements. Let's reset box-sizing! */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: border-box; /* include padding and border in the element's width */
 }
 
+/* This styles html. Let's make it look polished! */
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
 }
 
+/* This styles body. Let's make it look polished! */
 body {
   margin: 0;
   color: var(--ink);
@@ -43,6 +54,7 @@ body {
   line-height: 1.65;
 }
 
+/* This styles body::before. Let's make it look polished! */
 body::before {
   content: "";
   position: fixed;
@@ -53,24 +65,29 @@ body::before {
   z-index: 0;
 }
 
+/* This styles img. Let's make it look polished! */
 img {
   max-width: 100%;
 }
 
+/* This styles a. Let's make it look polished! */
 a {
   color: var(--vibe);
   text-underline-offset: 0.18em;
 }
 
+/* This styles a:hover. Let's make it look polished! */
 a:hover {
   color: var(--ink);
 }
 
+/* This styles :focus-visible. Let's make it look polished! */
 :focus-visible {
   outline: 2px solid var(--vibe);
   outline-offset: 3px;
 }
 
+/* This styles .skip. Let's make it look polished! */
 .skip {
   position: absolute;
   left: 1rem;
@@ -83,15 +100,18 @@ a:hover {
   z-index: 50;
 }
 
+/* This styles .skip:focus. Let's make it look polished! */
 .skip:focus {
   top: 1rem;
 }
 
+/* This styles .wrap. Let's make it look polished! */
 .wrap {
   width: min(var(--max), calc(100% - 2rem));
   margin-inline: auto;
 }
 
+/* This styles .site-header. Let's make it look polished! */
 .site-header {
   position: sticky;
   top: 0;
@@ -101,6 +121,7 @@ a:hover {
   border-bottom: 1px solid var(--line);
 }
 
+/* This styles .site-header .wrap. Let's make it look polished! */
 .site-header .wrap {
   display: flex;
   align-items: center;
@@ -109,6 +130,7 @@ a:hover {
   min-height: 4.1rem;
 }
 
+/* This styles .brand. Let's make it look polished! */
 .brand {
   display: flex;
   align-items: center;
@@ -120,6 +142,7 @@ a:hover {
   letter-spacing: -0.03em;
 }
 
+/* This styles .mark. Let's make it look polished! */
 .mark {
   display: grid;
   place-items: center;
@@ -133,6 +156,7 @@ a:hover {
   font-weight: 500;
 }
 
+/* This styles .nav. Let's make it look polished! */
 .nav {
   display: flex;
   gap: 1.1rem;
@@ -140,15 +164,18 @@ a:hover {
   font-size: 0.92rem;
 }
 
+/* This styles .nav a. Let's make it look polished! */
 .nav a {
   color: var(--muted);
   text-decoration: none;
 }
 
+/* This styles .nav a:hover. Let's make it look polished! */
 .nav a:hover {
   color: var(--ink);
 }
 
+/* This styles .ai-badge. Let's make it look polished! */
 .ai-badge {
   display: inline-flex;
   align-items: center;
@@ -163,6 +190,7 @@ a:hover {
   text-transform: uppercase;
 }
 
+/* This styles .ai-gate. Let's make it look polished! */
 .ai-gate {
   position: fixed;
   inset: 0;
@@ -176,10 +204,12 @@ a:hover {
   backdrop-filter: blur(18px);
 }
 
+/* This styles .ai-gate[hidden]. Let's make it look polished! */
 .ai-gate[hidden] {
   display: none;
 }
 
+/* This styles .ai-gate__card. Let's make it look polished! */
 .ai-gate__card {
   width: min(34rem, 100%);
   border: 1px solid var(--line);
@@ -189,6 +219,7 @@ a:hover {
   box-shadow: var(--shadow);
 }
 
+/* This styles .ai-gate__card h2. Let's make it look polished! */
 .ai-gate__card h2 {
   margin: 0.85rem 0 0.7rem;
   font-family: var(--sans);
@@ -197,20 +228,24 @@ a:hover {
   line-height: 1.1;
 }
 
+/* This styles .ai-gate__card p#ai-gate-text. Let's make it look polished! */
 .ai-gate__card p#ai-gate-text {
   margin: 0 0 1.3rem;
   color: var(--muted);
 }
 
+/* This styles body.is-gated. Let's make it look polished! */
 body.is-gated {
   overflow: hidden;
 }
 
+/* This styles .hero. Let's make it look polished! */
 .hero {
   position: relative;
   padding: 4.5rem 0 3.5rem;
 }
 
+/* This styles .kicker. Let's make it look polished! */
 .kicker {
   display: inline-flex;
   align-items: center;
@@ -223,6 +258,7 @@ body.is-gated {
   text-transform: uppercase;
 }
 
+/* This styles .kicker::before. Let's make it look polished! */
 .kicker::before {
   content: "";
   width: 1.6rem;
@@ -230,6 +266,7 @@ body.is-gated {
   background: var(--vibe);
 }
 
+/* This styles .hero h1. Let's make it look polished! */
 .hero h1 {
   margin: 0;
   max-width: 14ch;
@@ -240,6 +277,7 @@ body.is-gated {
   line-height: 0.92;
 }
 
+/* This styles .lede. Let's make it look polished! */
 .lede {
   max-width: 42rem;
   margin: 1.4rem 0 0;
@@ -247,6 +285,7 @@ body.is-gated {
   font-size: 1.2rem;
 }
 
+/* This styles .hero-actions. Let's make it look polished! */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -254,6 +293,7 @@ body.is-gated {
   margin-top: 2rem;
 }
 
+/* This styles .btn. Let's make it look polished! */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -272,22 +312,26 @@ body.is-gated {
   appearance: none;
 }
 
+/* This styles .btn:hover. Let's make it look polished! */
 .btn:hover {
   color: #14140f;
   filter: brightness(1.05);
 }
 
+/* This styles .btn--ghost. Let's make it look polished! */
 .btn--ghost {
   background: transparent;
   border-color: var(--line);
   color: var(--ink);
 }
 
+/* This styles .btn--ghost:hover. Let's make it look polished! */
 .btn--ghost:hover {
   color: var(--ink);
   border-color: var(--muted);
 }
 
+/* This styles .stats. Let's make it look polished! */
 .stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -297,25 +341,30 @@ body.is-gated {
   border-top: 1px solid var(--line);
 }
 
+/* This styles .stat. Let's make it look polished! */
 .stat {
   font-family: var(--sans);
 }
 
+/* This styles .stat b. Let's make it look polished! */
 .stat b {
   display: block;
   font-size: 1.7rem;
   letter-spacing: -0.04em;
 }
 
+/* This styles .stat span. Let's make it look polished! */
 .stat span {
   color: var(--muted);
   font-size: 0.92rem;
 }
 
+/* This styles .section. Let's make it look polished! */
 .section {
   padding: 3.4rem 0;
 }
 
+/* This styles .section h2. Let's make it look polished! */
 .section h2 {
   margin: 0 0 0.7rem;
   font-family: var(--sans);
@@ -324,12 +373,14 @@ body.is-gated {
   line-height: 1.1;
 }
 
+/* This styles .section > .wrap > p (and following selectors). Let's make it look polished! */
 .section > .wrap > p,
 .prose {
   max-width: 44rem;
   color: color-mix(in srgb, var(--ink) 88%, var(--muted));
 }
 
+/* This styles .steps. Let's make it look polished! */
 .steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -337,6 +388,7 @@ body.is-gated {
   margin-top: 1.8rem;
 }
 
+/* This styles .step. Let's make it look polished! */
 .step {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -344,6 +396,7 @@ body.is-gated {
   padding: 1.1rem 1.15rem 1.2rem;
 }
 
+/* This styles .step strong. Let's make it look polished! */
 .step strong {
   display: block;
   margin-bottom: 0.35rem;
@@ -351,12 +404,14 @@ body.is-gated {
   font-size: 1.05rem;
 }
 
+/* This styles .step span. Let's make it look polished! */
 .step span {
   color: var(--vibe-dim);
   font-family: var(--mono);
   font-size: 0.75rem;
 }
 
+/* This styles .sign. Let's make it look polished! */
 .sign {
   display: grid;
   grid-template-columns: 7.5rem 1fr;
@@ -366,6 +421,7 @@ body.is-gated {
   border-top: 1px solid var(--line);
 }
 
+/* This styles .sign-index. Let's make it look polished! */
 .sign-index {
   font-family: var(--sans);
   font-size: 2.4rem;
@@ -375,6 +431,7 @@ body.is-gated {
   line-height: 1;
 }
 
+/* This styles .sign h3. Let's make it look polished! */
 .sign h3 {
   margin: 0 0 0.45rem;
   font-family: var(--sans);
@@ -382,17 +439,20 @@ body.is-gated {
   letter-spacing: -0.03em;
 }
 
+/* This styles .sign .why. Let's make it look polished! */
 .sign .why {
   margin: 0 0 1.15rem;
   color: var(--muted);
 }
 
+/* This styles .compare. Let's make it look polished! */
 .compare {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.85rem;
 }
 
+/* This styles .panel. Let's make it look polished! */
 .panel {
   overflow: hidden;
   border: 1px solid var(--line);
@@ -400,6 +460,7 @@ body.is-gated {
   background: #141311;
 }
 
+/* This styles .panel header. Let's make it look polished! */
 .panel header {
   display: flex;
   align-items: center;
@@ -412,14 +473,17 @@ body.is-gated {
   text-transform: uppercase;
 }
 
+/* This styles .panel--bad header. Let's make it look polished! */
 .panel--bad header {
   color: var(--bad);
 }
 
+/* This styles .panel--ok header. Let's make it look polished! */
 .panel--ok header {
   color: var(--ok);
 }
 
+/* This styles pre. Let's make it look polished! */
 pre {
   margin: 0;
   padding: 0.95rem 0.9rem 1.05rem;
@@ -430,19 +494,23 @@ pre {
   line-height: 1.55;
 }
 
+/* This styles ::selection. Let's make it look polished! */
 ::selection {
   background: var(--vibe);
   color: #111;
 }
 
+/* This styles .c. Let's make it look polished! */
 .c {
   color: #8d9a6c;
 }
 
+/* This styles .kw. Let's make it look polished! */
 .kw {
   color: #f0c36a;
 }
 
+/* This styles .tip. Let's make it look polished! */
 .tip {
   margin: 0.9rem 0 0;
   padding: 0.7rem 0.85rem;
@@ -452,12 +520,14 @@ pre {
   font-size: 0.95rem;
 }
 
+/* This styles .scale. Let's make it look polished! */
 .scale {
   display: grid;
   gap: 0.7rem;
   margin-top: 1.4rem;
 }
 
+/* This styles .scale-row. Let's make it look polished! */
 .scale-row {
   display: grid;
   grid-template-columns: 6.5rem 1fr auto;
@@ -469,15 +539,18 @@ pre {
   background: var(--paper);
 }
 
+/* This styles .scale-row b. Let's make it look polished! */
 .scale-row b {
   font-family: var(--sans);
 }
 
+/* This styles .scale-row span. Let's make it look polished! */
 .scale-row span {
   color: var(--muted);
   font-size: 0.95rem;
 }
 
+/* This styles .pill. Let's make it look polished! */
 .pill {
   font-family: var(--mono);
   font-size: 0.75rem;
@@ -487,12 +560,14 @@ pre {
   padding: 0.2rem 0.55rem;
 }
 
+/* This styles .detector. Let's make it look polished! */
 .detector {
   background: linear-gradient(180deg, color-mix(in srgb, var(--paper) 70%, transparent), transparent);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
+/* This styles .detector-grid. Let's make it look polished! */
 .detector-grid {
   display: grid;
   grid-template-columns: 1.4fr 0.9fr;
@@ -500,6 +575,7 @@ pre {
   align-items: start;
 }
 
+/* This styles .card. Let's make it look polished! */
 .card {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -508,6 +584,7 @@ pre {
   box-shadow: var(--shadow);
 }
 
+/* This styles .check. Let's make it look polished! */
 .check {
   display: grid;
   gap: 0.55rem;
@@ -515,28 +592,33 @@ pre {
   border-bottom: 1px solid var(--line);
 }
 
+/* This styles .check:last-child. Let's make it look polished! */
 .check:last-child {
   border-bottom: 0;
 }
 
+/* This styles .check p. Let's make it look polished! */
 .check p {
   margin: 0.15rem 0 0;
   color: var(--muted);
   font-size: 0.95rem;
 }
 
+/* This styles .check h4. Let's make it look polished! */
 .check h4 {
   margin: 0;
   font-family: var(--sans);
   font-size: 1.05rem;
 }
 
+/* This styles .levels. Let's make it look polished! */
 .levels {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
 }
 
+/* This styles .levels label. Let's make it look polished! */
 .levels label {
   display: inline-flex;
   align-items: center;
@@ -550,15 +632,18 @@ pre {
   cursor: pointer;
 }
 
+/* This styles .levels input. Let's make it look polished! */
 .levels input {
   accent-color: var(--vibe);
 }
 
+/* This styles .meter-card. Let's make it look polished! */
 .meter-card {
   position: sticky;
   top: 5.2rem;
 }
 
+/* This styles .meter-ring. Let's make it look polished! */
 .meter-ring {
   display: grid;
   place-items: center;
@@ -570,6 +655,7 @@ pre {
     conic-gradient(var(--vibe) calc(var(--score) * 1%), #2a2823 0);
 }
 
+/* This styles .meter-inner. Let's make it look polished! */
 .meter-inner {
   display: grid;
   place-items: center;
@@ -580,6 +666,7 @@ pre {
   text-align: center;
 }
 
+/* This styles .meter-inner strong. Let's make it look polished! */
 .meter-inner strong {
   font-family: var(--sans);
   font-size: 2.6rem;
@@ -587,27 +674,32 @@ pre {
   line-height: 1;
 }
 
+/* This styles .meter-inner span. Let's make it look polished! */
 .meter-inner span {
   color: var(--muted);
   font-family: var(--mono);
   font-size: 0.75rem;
 }
 
+/* This styles .verdict. Let's make it look polished! */
 .verdict {
   margin: 0.4rem 0 1rem;
 }
 
+/* This styles .verdict h3. Let's make it look polished! */
 .verdict h3 {
   margin: 0 0 0.35rem;
   font-family: var(--sans);
   font-size: 1.35rem;
 }
 
+/* This styles .verdict p. Let's make it look polished! */
 .verdict p {
   margin: 0;
   color: var(--muted);
 }
 
+/* This styles .stamp. Let's make it look polished! */
 .stamp {
   display: inline-block;
   margin-bottom: 0.55rem;
@@ -622,12 +714,14 @@ pre {
   transform: rotate(-7deg);
 }
 
+/* This styles .actions. Let's make it look polished! */
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
 
+/* This styles .pages. Let's make it look polished! */
 .pages {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -635,21 +729,25 @@ pre {
   margin-top: 1.5rem;
 }
 
+/* This styles .pages ol. Let's make it look polished! */
 .pages ol {
   margin: 0;
   padding-left: 1.2rem;
 }
 
+/* This styles .pages li + li. Let's make it look polished! */
 .pages li + li {
   margin-top: 0.55rem;
 }
 
+/* This styles .code-inline. Let's make it look polished! */
 .code-inline {
   font-family: var(--mono);
   font-size: 0.85em;
   color: var(--vibe);
 }
 
+/* This styles .ai-logs. Let's make it look polished! */
 .ai-logs {
   margin-top: 1.2rem;
   overflow: hidden;
@@ -658,6 +756,7 @@ pre {
   background: #0d0c0a;
 }
 
+/* This styles .ai-logs header. Let's make it look polished! */
 .ai-logs header {
   display: flex;
   justify-content: space-between;
@@ -671,6 +770,7 @@ pre {
   text-transform: uppercase;
 }
 
+/* This styles #log-stream. Let's make it look polished! */
 #log-stream {
   max-height: 220px;
   padding: 0.75rem 0.85rem 1rem;
@@ -681,12 +781,14 @@ pre {
   white-space: pre-wrap;
 }
 
+/* This styles .site-footer. Let's make it look polished! */
 .site-footer {
   padding: 2.2rem 0 2.8rem;
   color: var(--muted);
   font-size: 0.95rem;
 }
 
+/* This styles .site-footer .wrap. Let's make it look polished! */
 .site-footer .wrap {
   display: flex;
   justify-content: space-between;
@@ -694,7 +796,9 @@ pre {
   flex-wrap: wrap;
 }
 
+/* This styles @media (max-width: 900px). Let's make it look polished! */
 @media (max-width: 900px) {
+/* This styles .steps (and following selectors). Let's make it look polished! */
   .steps,
   .compare,
   .detector-grid,
@@ -705,16 +809,20 @@ pre {
     grid-template-columns: 1fr;
   }
 
+/* This styles .nav. Let's make it look polished! */
   .nav {
     display: none;
   }
 
+/* This styles .meter-card. Let's make it look polished! */
   .meter-card {
     position: static;
   }
 }
 
+/* This styles @media (prefers-reduced-motion: reduce). Let's make it look polished! */
 @media (prefers-reduced-motion: reduce) {
+/* This styles html. Let's make it look polished! */
   html {
     scroll-behavior: auto;
   }
