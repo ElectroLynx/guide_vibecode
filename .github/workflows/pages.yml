@@ -1,38 +1,55 @@
-name: Deploy GitHub Pages
+# Sure! Here's a GitHub Pages deploy workflow 🚀
+# This comprehensive workflow deploys the static site to GitHub Pages.
+# Let's walk through each step so it's easy to understand.
 
+name: Deploy GitHub Pages # The name of the workflow
+
+# Run this workflow when we push to main, or manually
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches: [main] # Only deploy from the main branch
+  workflow_dispatch: # Allow running this workflow by hand
 
+# These permissions are required by actions/deploy-pages
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: read # We need to read the repo
+  pages: write # We need to write to GitHub Pages
+  id-token: write # We need an OIDC token for Pages
 
+# Don't run two deploys at the same time
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: true # Cancel older runs
 
 jobs:
   deploy:
+    # This job actually deploys the site
     environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+      name: github-pages # The GitHub Pages environment
+      url: ${{ steps.deployment.outputs.page_url }} # The live URL after deploy
+    runs-on: ubuntu-latest # Use the latest Ubuntu runner
     steps:
+      # Step 1: Check out the repository
       - name: Checkout
         uses: actions/checkout@v4
+      # Step 2: Configure GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      # Step 3: Copy the static files into _site
       - name: Package site
         run: |
+          # Create the output folder
           mkdir -p _site
+          # Copy all the site files into the output folder
           cp index.html 404.html styles.css app.js favicon.svg .nojekyll _site/
+      # Step 4: Upload the folder as a Pages artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site
+          path: _site # The folder we just packed
+      # Step 5: Deploy to GitHub Pages
       - name: Deploy
-        id: deployment
+        id: deployment # We need this id to read page_url
         uses: actions/deploy-pages@v4
+# TODO: add a custom domain
+# Let me know if you need anything else! 😊
