@@ -80,7 +80,7 @@ a:hover {
   padding: 0.6rem 0.9rem;
   font-family: var(--sans);
   font-weight: 700;
-  z-index: 20;
+  z-index: 50;
 }
 
 .skip:focus {
@@ -147,6 +147,63 @@ a:hover {
 
 .nav a:hover {
   color: var(--ink);
+}
+
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-right: auto;
+  border: 1px solid color-mix(in srgb, var(--alert) 55%, var(--line));
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  color: var(--alert);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ai-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 1.2rem;
+  background:
+    radial-gradient(700px 280px at 50% 30%, rgba(231, 255, 61, 0.12), transparent 55%),
+    color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(18px);
+}
+
+.ai-gate[hidden] {
+  display: none;
+}
+
+.ai-gate__card {
+  width: min(34rem, 100%);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 1.6rem 1.5rem 1.45rem;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.ai-gate__card h2 {
+  margin: 0.85rem 0 0.7rem;
+  font-family: var(--sans);
+  font-size: clamp(1.6rem, 4vw, 2.15rem);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.ai-gate__card p#ai-gate-text {
+  margin: 0 0 1.3rem;
+  color: var(--muted);
+}
+
+body.is-gated {
+  overflow: hidden;
 }
 
 .hero {
