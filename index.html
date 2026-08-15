@@ -24,14 +24,37 @@
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body class="is-gated">
     <a class="skip" href="#contenu">Aller au contenu</a>
+    <div
+      class="ai-gate"
+      id="ai-gate"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="ai-gate-title"
+      aria-describedby="ai-gate-text"
+    >
+      <div class="ai-gate__card">
+        <p class="kicker">Avertissement d’entrée</p>
+        <div class="stamp">Généré par IA</div>
+        <h2 id="ai-gate-title">Ce site a été généré par une IA</h2>
+        <p id="ai-gate-text">
+          Guide, détecteur, exemples, CSS, logs : tout est sorti d’une session
+          d’assistant. Le spécimen n’est pas seulement dans les captures d’écran.
+          C’est la page que tu es en train d’ouvrir.
+        </p>
+        <button class="btn" id="ai-gate-enter" type="button">
+          Entrer quand même
+        </button>
+      </div>
+    </div>
     <header class="site-header">
       <div class="wrap">
         <a class="brand" href="#top">
           <span class="mark">V</span>
           Est-ce vibecodé ?
         </a>
+        <span class="ai-badge">Généré par IA</span>
         <nav class="nav" aria-label="Sections">
           <a href="#methode">Méthode</a>
           <a href="#signes">8 signes</a>
@@ -454,6 +477,7 @@
           <h2>Détecteur</h2>
           <p>
             Coche ce que tu vois dans le fichier. Le vibe-o-mètre fait le reste.
+            Le JS du site loggue absolument tout : spécimen vivant, pas un bug.
           </p>
           <div class="detector-grid">
             <div class="card" id="checks"></div>
@@ -478,6 +502,13 @@
                 <button class="btn btn--ghost" id="reset" type="button">Remise à zéro</button>
               </div>
             </aside>
+          </div>
+          <div class="ai-logs" id="ai-logs">
+            <header>
+              <span>console.log leftover · do not ship 🚀</span>
+              <span><span id="log-count">0</span> lines</span>
+            </header>
+            <pre id="log-stream">waiting for logs...</pre>
           </div>
         </div>
       </section>
