@@ -454,6 +454,7 @@
           <h2>Détecteur</h2>
           <p>
             Coche ce que tu vois dans le fichier. Le vibe-o-mètre fait le reste.
+            Le JS du site loggue absolument tout : spécimen vivant, pas un bug.
           </p>
           <div class="detector-grid">
             <div class="card" id="checks"></div>
@@ -478,6 +479,13 @@
                 <button class="btn btn--ghost" id="reset" type="button">Remise à zéro</button>
               </div>
             </aside>
+          </div>
+          <div class="ai-logs" id="ai-logs">
+            <header>
+              <span>console.log leftover · do not ship 🚀</span>
+              <span><span id="log-count">0</span> lines</span>
+            </header>
+            <pre id="log-stream">waiting for logs...</pre>
           </div>
         </div>
       </section>
